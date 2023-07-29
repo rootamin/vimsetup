@@ -1,0 +1,13 @@
+[Unit]
+Description=Django Gunicorn Server for Aria Rang
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/home/debian/ariarang
+Environment="PATH=/home/debian/miniconda3/envs/ariarang/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/home/debian/miniconda3/envs/ariarang/bin/gunicorn ariarang.wsgi:application --bind localhost:8001
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
