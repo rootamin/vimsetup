@@ -6,5 +6,5 @@ sudo ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled
 sudo chown -R www-data:www-data path/static
 sudo chmod -R 755 /path/static
 
-sudo chown -R www-data:www-data path/ariarang/media
+sudo chown -R www-data:www-data path/media
 sudo chmod -R 775 path/media
