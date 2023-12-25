@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn service for Django project
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/home/amin/project
+ExecStart=/home/amin/project/venv/bin/gunicorn --workers=3 --bind=127.0.0.1:8001 project.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
