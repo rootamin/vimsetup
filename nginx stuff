@@ -8,3 +8,15 @@ sudo chmod -R 755 /path/static
 
 sudo chown -R www-data:www-data path/media
 sudo chmod -R 775 path/media
+
+
+
+# database section 
+sudo apt install postgresql postgresql-contrib
+
+sudo -i -u postgres
+createdb websitedb
+psql -d websitedb
+\conninfo
+\password
+\q
