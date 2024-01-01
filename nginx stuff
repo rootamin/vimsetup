@@ -20,3 +20,18 @@ psql -d websitedb
 \conninfo
 \password
 \q
+
+
+
+
+
+# get ssl:
+
+export DOMAIN=YOUR_DOMAIN
+
+mkdir -p /var/lib/certs
+
+~/.acme.sh/acme.sh \
+  --issue --force --standalone -d "$DOMAIN" \
+  --fullchain-file "/var/lib/certs/$DOMAIN.cer" \
+  --key-file "/var/lib/certs/$DOMAIN.cer.key"
