@@ -26,6 +26,7 @@ psql -d websitedb
 
 
 # get ssl:
+curl https://get.acme.sh | sh -s email=YOUR_EMAIL
 
 export DOMAIN=YOUR_DOMAIN
 
