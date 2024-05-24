@@ -1,12 +1,12 @@
 [Unit]
-Description=Django Gunicorn Server for Aria Rang
+Description=Django Gunicorn Server for rootamin.ir
 After=network.target
 
 [Service]
-User=www-data
-WorkingDirectory=/home/debian/ariarang
-Environment="PATH=/home/debian/miniconda3/envs/ariarang/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-ExecStart=/home/debian/miniconda3/envs/ariarang/bin/gunicorn ariarang.wsgi:application --bind localhost:8001
+User=amin
+WorkingDirectory=/home/amin/rootamin_ir
+Environment="PATH=/home/amin/miniconda3/envs/rootamin_ir/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/home/amin/miniconda3/envs/rootamin_ir/bin/gunicorn rootamin_ir.wsgi:application --bind localhost:8001 -w 3 --access-logfile /home/amin/rootamin_ir.log --log-level debug --forwarded-allow-ips "*" --access-logformat "%(h)s %(l)s %(u)s %(t)s \"%(r)s\" %(s)s %(b)s \"%(f)s\" \"%(a)s\" %({X-Forwarded-For}i)s %({CF-Connecting-IP}i)s"
 Restart=always
 
 [Install]
